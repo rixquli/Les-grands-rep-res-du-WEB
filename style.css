@@ -10,6 +10,7 @@ body {
   );
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .title {
@@ -39,8 +40,8 @@ h1::after {
 }
 
 .events {
-  position: relative;
-  right: 0px;
+  position: absolute;
+  left: 0px;
   margin-left: 20px;
   overflow: hidden;
   width: 70vw;
@@ -70,7 +71,7 @@ h1::after {
   font-size: xx-large;
   position: absolute;
   bottom: 10px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .event h2 {
@@ -79,22 +80,23 @@ h1::after {
 }
 
 .nextPage {
-  position: relative;
+  position: absolute;
   margin-top: 20px;
   margin-left: 20px;
   display: inline-flex;
   flex-direction: row;
   width: 90vw;
+  bottom: 0px;
 }
 
 .dates {
-  display: flex;
-  flex-direction: column;
-  width: 135ch;
-  position: fixed;
-  /* margin-left: 20px; */
-  display: flex;
-  justify-content: space-between;
+  /* flex-direction: column; */
+  width: 100vw;
+  height: 77vh;
+  position: absolute;
+  margin-left: 20px;
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 .imgs {
   height: 55%;
@@ -192,7 +194,7 @@ img {
 }
 
 /* break point pour les deux image de la première date */
-@media (max-aspect-ratio: 871/582) {
+@media (max-aspect-ratio: 750/898) {
   .img2 {
     display: none;
   }
@@ -206,8 +208,8 @@ img {
     flex-direction: row;
     width: 75vh;
     transform: rotate(270deg);
-    left: 25%;
-    top: 40%;
+    right: -234px;
+    bottom: 53%;
   }
   .next {
     writing-mode: vertical-lr;
