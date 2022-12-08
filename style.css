@@ -30,6 +30,10 @@ h1 {
   animation: typing 2s;
 }
 
+h3 {
+  font-size: xx-large;
+}
+
 h1::after {
   content: "";
   position: relative;
@@ -90,13 +94,10 @@ h1::after {
 }
 
 .dates {
-  /* flex-direction: column; */
   width: 100vw;
   height: 77vh;
   position: absolute;
   margin-left: 20px;
-  /* display: flex; */
-  /* justify-content: space-between; */
 }
 .imgs {
   height: 55%;
@@ -108,9 +109,6 @@ h1::after {
   flex-flow: row wrap;
 }
 img {
-  /* aspect-ratio: auto;
-  height: 100%;
-  max-width: 100%; */
   height: max-content;
   max-height: 80%;
   max-width: 100%;
@@ -119,7 +117,9 @@ img {
   text-decoration: none;
   color: chocolate;
   position: relative;
-  /* margin: 20px; */
+  margin: 2%;
+  margin-top: 0;
+  margin-bottom: 0;
   top: 30px;
   font-size: 30px;
   flex: 1 1;
@@ -129,19 +129,15 @@ img {
 .next:focus,
 .next:hover {
   border-bottom: 3px solid rgb(39, 39, 202);
-
   font-weight: 700;
-  /* -webkit-text-stroke: .5px black;*/
-  /* background-color: blueviolet; */
 }
 .next::before {
   content: "";
-  /* display: block; */
   position: absolute;
   background: red;
   border-radius: 50%;
   top: -100%;
-  left: 34%;
+  transform: translateX(10px);
   width: 40px;
   height: 40px;
   animation: point 1s;
@@ -150,8 +146,7 @@ img {
   content: "";
   position: absolute;
   background: red;
-  /* width: calc(100%+20px); */
-  width: 100%;
+  width: 160%;
   top: -50%;
   left: 50%;
   height: 8px;
@@ -162,6 +157,42 @@ img {
   content: none;
 }
 
+input[type="checkbox"] {
+  display: none;
+}
+.menu {
+  padding: 5px;
+  margin: 3px;
+  position: absolute;
+  background-color: chocolate;
+  border: solid 1.5px black;
+  border-radius: 10px;
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menuTitle {
+  cursor: pointer;
+}
+.menuContent {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label > .menuContent {
+  display: block;
+}
+
+input[type="checkbox"]:checked + label > .menuTitle {
+  border-bottom: solid 1.5px black;
+}
+
+.menuContent > a {
+  text-decoration: none;
+  color: floralwhite;
+}
+
+/* animations */
 @keyframes typingBar {
   0% {
     opacity: 0;
@@ -193,15 +224,14 @@ img {
   }
 }
 
-/* break point pour les deux image de la première date */
+/* break point */
 @media (max-aspect-ratio: 750/898) {
   .img2 {
     display: none;
   }
 }
 
-/* 750/898 */
-@media (max-aspect-ratio: 750/898) {
+@media (max-aspect-ratio: 1024/860) {
   .nextPage {
     position: absolute;
     display: inline-flex;
@@ -218,7 +248,7 @@ img {
     left: -5%;
   }
   .next::after {
-    left: 15%;
+    left: 50%;
     transform: translateY(-165%);
   }
   .next:focus,

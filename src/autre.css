@@ -1,0 +1,97 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: linear-gradient(
+    206deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(82, 33, 115, 1) 0%,
+    rgba(6, 146, 224, 1) 100%
+  );
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+.menu {
+  padding: 5px;
+  margin: 3px;
+  position: absolute;
+  background-color: chocolate;
+  border: solid 1.5px black;
+  border-radius: 10px;
+  width: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menuTitle {
+  cursor: pointer;
+}
+.menuContent {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label > .menuContent {
+  display: block;
+}
+.autreContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.autreContent > p {
+  font-size: x-large;
+  padding: 5px;
+  border: solid black 0.5px;
+  border-radius: 10px;
+  color: aliceblue;
+  background: linear-gradient(
+    311deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(35, 218, 115, 1) 0%,
+    rgba(68, 99, 182, 1) 0%,
+    rgba(199, 39, 50, 1) 100%
+  );
+  animation: from-left 1s forwards;
+}
+.autre {
+  font-size: 70px;
+  padding: 7px;
+  padding-right: 10px;
+  border: solid #45a29e;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 210px;
+  animation: typing 1.5s;
+}
+.clickHere {
+  color: gold;
+}
+
+input[type="checkbox"]:checked + label > .menuTitle {
+  border-bottom: solid 1.5px black;
+}
+
+.menuContent > a {
+  text-decoration: none;
+  color: floralwhite;
+}
+
+/* animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes from-left {
+  from {
+    transform: translate(-100%, 0);
+  }
+}
